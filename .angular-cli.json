@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "assets/fontello.css",
         "styles.css"
       ],
       "scripts": [],

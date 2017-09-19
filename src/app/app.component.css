@@ -1,0 +1,90 @@
+.header {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.header-text {
+  font-weight: 400;
+}
+
+.container {
+  height: 100%;
+}
+
+.textarea-container {
+  width: 100%;
+  position: relative;
+  border: solid 1px #ccc;
+  margin-bottom: 20px;
+}
+
+.textarea-container.active {
+  border: 1px solid rgba(254, 197, 12, 0.54);
+}
+
+.textarea-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #999;
+  font-size: 120%;
+  padding: 10px 10px 0px 10px;
+}
+
+i.icon-delete-o:hover {
+  cursor: pointer;
+  color: rgba(255, 0, 0, 0.51);
+}
+
+i.icon-copy:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.alphabet-name {
+  font-size: 12px;
+  padding-top: 8px;
+}
+
+textarea {
+  margin-top: 45px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 10px;
+  border: none;
+  outline: none;
+  width: 100%;
+  resize: none;
+  min-height: 150px;
+  max-height: 500px;
+  font-size: 20px;
+  overflow-y: auto;
+}
+
+textarea::selection {
+  background: rgba(255, 228, 72, 0.25); /* WebKit/Blink Browsers */
+}
+
+textarea::-moz-selection {
+  background: rgba(255, 228, 72, 0.25); /* Gecko Browsers */
+}
+
+.textarea-bottom {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #999;
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+.modal-header-text {
+  padding-bottom: 20px;
+}
+
+.smFont {
+  font-size: 16px;
+}
