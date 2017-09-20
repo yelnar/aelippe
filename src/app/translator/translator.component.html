@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-sm-6">
+
+    <div class="textarea-container" [ngClass]="{'active': focused}">
+
+      <div class="textarea-top">
+        <i class="icon-delete-o control" (click)="inputBox.value = ''; clear();"></i>
+        <span class="text-uppercase float-right  alphabet-name">Кириллица</span>
+      </div>
+
+      <textarea name="input" maxlength="5000"
+                wrap="soft" placeholder="Мәтін енгізіңіз..."
+                #inputBox
+                [(ngModel)] = "inputModel" (ngModelChange)="onTextChanged(inputBox.value)"
+                [ngClass] = "{'smFont': inputBox.value.length > 150}"
+                (focus)="onFocus()"
+                (blur)="onBlur()"
+      ></textarea>
+
+      <div class="textarea-bottom">
+        {{inputBox.value.length + " / " + MAX_LENGTH}}
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-sm-6">
+
+    <div class="textarea-container">
+
+      <div class="textarea-top">
+        <i class="icon-copy float-right control"
+           ngxClipboard [cbContent]="translation | async" (cbOnSuccess)="outputBox.select()"></i>
+        <span class="text-uppercase alphabet-name">Latyn</span>
+      </div>
+
+      <textarea name="input" readonly
+                wrap="soft"
+                #outputBox
+                [ngClass] = "{'smFont': inputBox.value.length > 150}"
+                [value]="translation | async"
+      ></textarea>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="row footer">
+  <div class="col text-muted text-center">
+    &copy; 2017 Elnar N.
+  </div>
+</div>

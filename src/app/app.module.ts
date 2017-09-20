@@ -10,19 +10,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { ClipboardModule } from 'ngx-clipboard';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { TranslatorComponent } from './translator/translator.component';
+import { AboutComponent } from './about/about.component';
+
 import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TranslatorComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     Ng2Bs3ModalModule,
-    ClipboardModule
+    ClipboardModule,
+    AppRoutingModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
