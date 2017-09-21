@@ -2,7 +2,7 @@
  * Yelnar Nauryzbayev
  */
 
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -16,11 +16,15 @@ import 'rxjs/add/operator/switchMap';
 
 import { AppService } from './../app.service';
 
+import { fadeInAnimation } from './fade-in-out.animation';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   moduleId: module.id,
   selector: 'app-translator',
   templateUrl: './translator.component.html',
-  styleUrls: ['./translator.component.css']
+  styleUrls: ['./translator.component.css'],
+  animations: [fadeInAnimation]
 })
 
 export class TranslatorComponent implements OnInit {
@@ -31,7 +35,8 @@ export class TranslatorComponent implements OnInit {
   private subject = new Subject<string>();
 
   constructor(
-    private appService: AppService
+    private appService: AppService,
+    public activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -63,5 +68,10 @@ export class TranslatorComponent implements OnInit {
 
   clear() {
     this.subject.next('');
+  }
+
+  @HostBinding('@fadeInAnimation')
+  public get childRouteTransition() {
+    return this.activatedRoute.snapshot;
   }
 }
