@@ -1,12 +1,12 @@
 import { trigger, state, animate, transition, style } from '@angular/animations';
 
-export const slideInOutAnimation =
-  trigger('slideInOutAnimation', [
+export const anim =
+  trigger('anim', [
 
     // end state styles for route container (host)
-    state('*', style({
+    state('active', style({
       // the view covers the whole screen with a semi tranparent background
-      position: 'fixed',
+      position: 'absolute',
       top: 0,
       left: 0,
       right: 0,
@@ -14,14 +14,24 @@ export const slideInOutAnimation =
       backgroundColor: 'rgba(0, 0, 0, 0.8)'
     })),
 
+    state('inactive', style({
+      // the view covers the whole screen with a semi tranparent background
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: '-400%',
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.8)'
+    })),
+
     // route 'enter' transition
-    transition(':enter', [
+    transition('inactive => active', [
 
       // styles at start of transition
       style({
         // start with the content positioned off the right of the screen,
         // -400% is required instead of -100% because the negative position adds to the width of the element
-        bottom: '-10000%',
+        right: '-400%',
 
         // start with background opacity set to 0 (invisible)
         backgroundColor: 'rgba(0, 0, 0, 0)'
@@ -30,7 +40,7 @@ export const slideInOutAnimation =
       // animation and styles at end of transition
       animate('.5s ease-in-out', style({
         // transition the right position to 0 which slides the content into view
-        bottom: 0,
+        right: 0,
 
         // transition the background opacity to 0.8 to fade it in
         backgroundColor: 'rgba(0, 0, 0, 0.8)'
@@ -38,28 +48,14 @@ export const slideInOutAnimation =
     ]),
 
     // route 'leave' transition
-    transition(':leave', [
+    transition('active => inactive', [
       // animation and styles at end of transition
-      animate('.5s ease-in-out', style({
+      animate('.5s .5s ease-in-out', style({
         // transition the right position to -400% which slides the content out of view
-        bottom: '-10000%',
+        right: '-400%',
 
         // transition the background opacity to 0 to fade it out
         backgroundColor: 'rgba(0, 0, 0, 0)'
       }))
-    ])
-  ]);
-
-
-export const fadeInOutAnimation =
-  trigger('fadeInOutAnimation', [
-    // route 'enter' transition
-    transition(':enter', [
-
-      // styles at start of transition
-      style({ opacity: 0 }),
-
-      // animation and styles at end of transition
-      animate('.5s', style({ opacity: 1 }))
     ])
   ]);

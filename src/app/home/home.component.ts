@@ -2,13 +2,12 @@
  * Yelnar Nauryzbayev
  */
 
-import {Component, HostBinding, OnInit} from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/add/observable/of';
-
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -16,27 +15,32 @@ import 'rxjs/add/operator/switchMap';
 
 import { AppService } from './../app.service';
 
+import { slideInOut } from './slide-in-out.animation';
 import { fadeInAnimation } from './fade-in-out.animation';
-import { ActivatedRoute } from '@angular/router';
+import { anim } from './s.animation';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-translator',
-  templateUrl: './translator.component.html',
-  styleUrls: ['./translator.component.css'],
-  animations: [fadeInAnimation]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  animations: [
+    slideInOut,
+    fadeInAnimation,
+    anim
+  ]
 })
 
-export class TranslatorComponent implements OnInit {
+export class HomeComponent implements OnInit {
   MAX_LENGTH = 5000;
   translation: Observable<string>;
   focused: boolean;
   inputModel: string;
+  state = 'inactive';
   private subject = new Subject<string>();
 
   constructor(
-    private appService: AppService,
-    public activatedRoute: ActivatedRoute
+    private appService: AppService
   ) {}
 
   ngOnInit(): void {
@@ -70,8 +74,15 @@ export class TranslatorComponent implements OnInit {
     this.subject.next('');
   }
 
-  @HostBinding('@fadeInAnimation')
-  public get childRouteTransition() {
-    return this.activatedRoute.snapshot;
+  toggleState() {
+    this.state = this.state === 'active' ? 'inactive' : 'active';
+  }
+
+  getState() {
+    return this.state === 'active' ? 'inactive' : 'active';
+  }
+
+  done() {
+    console.log('fadeIn done');
   }
 }

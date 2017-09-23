@@ -1,3 +1,16 @@
+.container {
+  height: 100%;
+}
+
+.header {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.header-text {
+  font-weight: 400;
+}
+
 .textarea-container {
   width: 100%;
   position: relative;
@@ -74,4 +87,22 @@ textarea::-moz-selection {
 
 .smFont {
   font-size: 16px;
+}
+
+.about-btn-container {
+  width: 152px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 100px;
+  background: rgb(17, 17, 17);
+
+  display: table;
+  text-align: center;
+  vertical-align: middle;
+}
+.about-btn {
+  color: #fff;
+  text-decoration: none;
+  vertical-align: middle;
+  display: table-cell;
 }

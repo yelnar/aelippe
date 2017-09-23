@@ -3,19 +3,14 @@
  */
 
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-import { TranslatorComponent } from './translator/translator.component';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 
 const routes = [
   {
     path: '',
-    component: TranslatorComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent
+    component: HomeComponent
   }
 ];
 

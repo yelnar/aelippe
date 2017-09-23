@@ -22,7 +22,9 @@
         "assets/fontello.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/web-animations-js/web-animations.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

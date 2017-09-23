@@ -2,32 +2,39 @@
  * Yelnar Nauryzbayev
  */
 
-import { Component, HostBinding, OnInit } from '@angular/core';
+import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 
-import { slideInOutAnimation } from './slide-in-out.animation';
-import { ActivatedRoute } from '@angular/router';
-
+import { flyUpAnimation } from './fly-up.animation';
 
 @Component({
   moduleId: module.id,
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
-  animations: [slideInOutAnimation]
+  animations: [flyUpAnimation]
 })
 
 export class AboutComponent implements OnInit {
+  @Input() state: string;
+  @Output() toogleState = new EventEmitter();
 
-  constructor(
-    public activatedRoute: ActivatedRoute
-  ) {}
+  constructor() {
+    console.log('constructor');
+  }
 
   ngOnInit() {
+    console.log('ngOnInit');
+    console.log(this.state);
   }
 
-  @HostBinding('@slideInOutAnimation')
-  public get childRouteTransition() {
-    return this.activatedRoute.snapshot;
+  close() {
+    console.log(this.state);
+    this.toogleState.next();
   }
 
+  done() {
+    console.log('done');
+    console.log(this.state);
+  }
 }
+

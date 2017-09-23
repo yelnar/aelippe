@@ -15,7 +15,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { TranslatorComponent } from './translator/translator.component';
+import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
 import { AppService } from './app.service';
@@ -23,7 +23,7 @@ import { AppService } from './app.service';
 @NgModule({
   declarations: [
     AppComponent,
-    TranslatorComponent,
+    HomeComponent,
     AboutComponent
   ],
   imports: [
