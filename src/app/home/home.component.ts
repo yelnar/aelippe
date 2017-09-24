@@ -19,7 +19,7 @@ import { AppService } from './../app.service';
 
 import { slideInOut } from './slide-in-out.animation';
 import { fadeInAnimation } from './fade-in-out.animation';
-import { anim } from './s.animation';
+import { fadeInAndOut } from './fade-in-and-out.animation';
 
 @Component({
   moduleId: module.id,
@@ -29,7 +29,7 @@ import { anim } from './s.animation';
   animations: [
     slideInOut,
     fadeInAnimation,
-    anim
+    fadeInAndOut
   ]
 })
 
@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
   translation: Observable<string>;
   focused: boolean;
   inputModel: string;
+  isCopied = 0;
   state = 'inactive';
   languages = ['kz', 'ru', 'en'];
   curLang = 0;
@@ -87,6 +88,13 @@ export class HomeComponent implements OnInit {
 
   getState() {
     return this.state === 'active' ? 'inactive' : 'active';
+  }
+
+  copied() {
+    this.isCopied = 1;
+    setTimeout(() => {
+      this.isCopied = 0;
+    }, 500);
   }
 
   changeLanguage() {

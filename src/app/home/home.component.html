@@ -10,7 +10,6 @@
 
           <li class="nav-item">
             <a class="nav-link btn button text-uppercase"
-               data-toggle="tooltip" data-placement="top" title="Tooltip on top"
                href="#"
                (click)="toggleState()"
                translate>HOME.ABOUT</a>
@@ -26,8 +25,9 @@
         <div class="textarea-container" [ngClass]="{'active': focused}">
 
           <div class="textarea-top">
-            <i class="icon-delete-o control" (click)="inputBox.value = ''; clear();"></i>
-            <span class="text-uppercase float-right  alphabet-name" translate>HOME.CYRILLIC</span>
+            <i class="icon-delete-o control"
+               (click)="inputBox.value = ''; clear();"></i>
+            <span class="text-uppercase float-right alphabet-name" style="padding-top: 7px;" translate>HOME.CYRILLIC</span>
           </div>
 
           <textarea name="input" maxlength="5000"
@@ -53,8 +53,12 @@
 
           <div class="textarea-top">
             <i class="icon-copy float-right control"
-               ngxClipboard [cbContent]="translation | async" (cbOnSuccess)="outputBox.select()"></i>
-            <span class="text-uppercase alphabet-name">Latyn</span>
+               ngxClipboard [cbContent]="translation | async" (cbOnSuccess)="outputBox.select(); copied();"></i>
+            <span class="text-uppercase alphabet-name" translate>HOME.LATIN</span>
+            <span [@fadeInAndOut]="isCopied"
+                  class="alphabet-name text-lowercase"
+                  style="padding-left: 5px;"
+                  translate>HOME.COPIED</span>
           </div>
 
           <textarea name="input" readonly
@@ -84,8 +88,5 @@
   </section>
 
 </div>
-
-
-
 
 <app-about [@slideInOut]="state" [state]="state" (toogleState)="toggleState()"></app-about>
