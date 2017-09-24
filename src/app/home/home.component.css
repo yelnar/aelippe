@@ -4,7 +4,7 @@
 
 .header {
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .header-text {
@@ -87,40 +87,4 @@ textarea::-moz-selection {
 
 .smFont {
   font-size: 16px;
-}
-
-.about-btn-container {
-  width: 152px;
-  height: 50px;
-  margin: 0 auto;
-  border-radius: 100px;
-  background: rgb(17, 17, 17);
-
-  display: table;
-  text-align: center;
-  vertical-align: middle;
-}
-.about-btn {
-  color: #fff;
-  text-decoration: none;
-  vertical-align: middle;
-  display: table-cell;
-}
-
-.carousel-content {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  color:black;
-  display:flex;
-  align-items:center;
-}
-
-.carousel-item-1 {
-  background-color: rgba(26, 166, 198, 0.07);
-}
-.carousel-item-2 {
-  background-color: rgba(254, 209, 50, 0.35);;
-}
-.carousel-item-3 {
-  background-color: rgba(0, 198, 128, 0.23);
 }

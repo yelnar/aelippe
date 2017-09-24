@@ -13,6 +13,8 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 
+import { TranslateService } from '@ngx-translate/core';
+
 import { AppService } from './../app.service';
 
 import { slideInOut } from './slide-in-out.animation';
@@ -37,11 +39,17 @@ export class HomeComponent implements OnInit {
   focused: boolean;
   inputModel: string;
   state = 'inactive';
+  languages = ['kz', 'ru', 'en'];
+  curLang = 0;
   private subject = new Subject<string>();
 
   constructor(
-    private appService: AppService
-  ) {}
+    private appService: AppService,
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('en');
+    translate.use(this.languages[this.curLang]);
+  }
 
   ngOnInit(): void {
     this.focused = false;
@@ -53,7 +61,6 @@ export class HomeComponent implements OnInit {
         : Observable.of('')
       )
       .catch(error => {
-        console.error(error);
         return Observable.of(error);
       });
   }
@@ -75,14 +82,16 @@ export class HomeComponent implements OnInit {
   }
 
   toggleState() {
-    this.state = this.state === 'active' ? 'inactive' : 'active';
+    this.state === 'active' ? this.state = 'inactive' : this.state = 'active';
   }
 
   getState() {
     return this.state === 'active' ? 'inactive' : 'active';
   }
 
-  done() {
-    console.log('fadeIn done');
+  changeLanguage() {
+    // const locale = this.locales[]
+    this.curLang = (++this.curLang) % 3;
+    this.translate.use(this.languages[this.curLang]);
   }
 }

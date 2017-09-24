@@ -1,162 +1,87 @@
-<div class="container" [@fadeInAnimation]="getState()" (@fadeInAnimation.done)="done()">
-  <div class="header clearfix">
-    <nav>
-      <ul class="nav nav-pills float-right">
-        <li class="nav-item">
-          <a class="nav-link btn" href="#" style="background-color: #fee534; color: #000;" (click)="toggleState()">Анықтама</a>
-        </li>
-      </ul>
-    </nav>
-    <h3 class="header-text">Aelippe</h3>
-  </div>
+<div style="width: 100%;" [@fadeInAnimation]="getState()">
 
-  <div class="row">
-    <div class="col-sm-6">
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a href="#" (click)="changeLanguage()" style="color: #2E2F30;">{{languages[curLang]}}</a>
+          </li>
 
-      <div class="textarea-container" [ngClass]="{'active': focused}">
+          <li class="nav-item">
+            <a class="nav-link btn button text-uppercase"
+               data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+               href="#"
+               (click)="toggleState()"
+               translate>HOME.ABOUT</a>
+          </li>
+        </ul>
+      </nav>
+      <h3 class="header-text"><b>Aelippe</b></h3>
+    </div>
 
-        <div class="textarea-top">
-          <i class="icon-delete-o control" (click)="inputBox.value = ''; clear();"></i>
-          <span class="text-uppercase float-right  alphabet-name">Кириллица</span>
-        </div>
+    <div class="row">
+      <div class="col-sm-6">
 
-        <textarea name="input" maxlength="5000"
-                  wrap="soft" placeholder="Мәтін енгізіңіз..."
-                  #inputBox
-                  [(ngModel)] = "inputModel" (ngModelChange)="onTextChanged(inputBox.value)"
-                  [ngClass] = "{'smFont': inputBox.value.length > 150}"
-                  (focus)="onFocus()"
-                  (blur)="onBlur()"
-        ></textarea>
+        <div class="textarea-container" [ngClass]="{'active': focused}">
 
-        <div class="textarea-bottom">
-          {{inputBox.value.length + " / " + MAX_LENGTH}}
+          <div class="textarea-top">
+            <i class="icon-delete-o control" (click)="inputBox.value = ''; clear();"></i>
+            <span class="text-uppercase float-right  alphabet-name" translate>HOME.CYRILLIC</span>
+          </div>
+
+          <textarea name="input" maxlength="5000"
+                    wrap="soft" placeholder="Мәтін енгізіңіз..."
+                    #inputBox
+                    [(ngModel)] = "inputModel" (ngModelChange)="onTextChanged(inputBox.value)"
+                    [ngClass] = "{'smFont': inputBox.value.length > 150}"
+                    (focus)="onFocus()"
+                    (blur)="onBlur()"
+          ></textarea>
+
+          <div class="textarea-bottom">
+            {{inputBox.value.length + " / " + MAX_LENGTH}}
+          </div>
+
         </div>
 
       </div>
 
-    </div>
+      <div class="col-sm-6">
 
-    <div class="col-sm-6">
+        <div class="textarea-container">
 
-      <div class="textarea-container">
+          <div class="textarea-top">
+            <i class="icon-copy float-right control"
+               ngxClipboard [cbContent]="translation | async" (cbOnSuccess)="outputBox.select()"></i>
+            <span class="text-uppercase alphabet-name">Latyn</span>
+          </div>
 
-        <div class="textarea-top">
-          <i class="icon-copy float-right control"
-             ngxClipboard [cbContent]="translation | async" (cbOnSuccess)="outputBox.select()"></i>
-          <span class="text-uppercase alphabet-name">Latyn</span>
+          <textarea name="input" readonly
+                    wrap="soft"
+                    #outputBox
+                    [ngClass] = "{'smFont': inputBox.value.length > 150}"
+                    [value]="translation | async"
+          ></textarea>
+
         </div>
 
-        <textarea name="input" readonly
-                  wrap="soft"
-                  #outputBox
-                  [ngClass] = "{'smFont': inputBox.value.length > 150}"
-                  [value]="translation | async"
-        ></textarea>
-
-      </div>
-
-    </div>
-  </div>
-
-  <div class="row col" style="padding-top: 50px; padding-bottom: 50px;">
-    <div class="pluso" style="margin: 0 auto;" data-background="transparent" data-options="medium,round,line,horizontal,nocounter,theme=04" data-services="facebook,twitter,vkontakte" data-url="http://aelippe.kz" data-title="Aelippe" data-description="Перевод казахского языка на латиницу"></div>
-  </div>
-
-
-  <!--<div id="carouselExample" class="carousel slide" data-ride="carousel">-->
-    <!--<div class="carousel-inner" role="listbox">-->
-      <!--<div class="carousel-item carousel-item-1 active">-->
-        <!--<div class="carousel-content">-->
-          <!--<div>-->
-            <!--<hr>-->
-            <!--<blockquote class="blockquote text-center">-->
-              <!--<p class="mb-0">Перевод казахского языка на латиницу - это шаг к интеграции в глобальную систему науки и образования, обеспечения нашего духовного единства.</p>-->
-            <!--</blockquote>-->
-            <!--<footer class="blockquote-footer text-center">Нұрсұлтан Назарбаев</footer>-->
-            <!--<hr class="my-4">-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="carousel-item carousel-item-2">-->
-        <!--<div class="carousel-content">-->
-          <!--<div>-->
-            <!--<blockquote class="blockquote text-center">-->
-              <!--<p class="mb-0">Перевод казахского языка на латиницу - это шаг к интеграции в глобальную систему науки и образования, обеспечения нашего духовного единства.</p>-->
-            <!--</blockquote>-->
-            <!--<footer class="blockquote-footer text-center">Нұрсұлтан Назарбаев</footer>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="carousel-item carousel-item-3">-->
-        <!--<div class="carousel-content">-->
-          <!--<div>-->
-            <!--<blockquote class="blockquote text-center">-->
-              <!--<p class="mb-0">Перевод казахского языка на латиницу - это шаг к интеграции в глобальную систему науки и образования, обеспечения нашего духовного единства.</p>-->
-            <!--</blockquote>-->
-            <!--<footer class="blockquote-footer text-center">Нұрсұлтан Назарбаев</footer>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-
-    <!--</div>-->
-    <!--<a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">-->
-      <!--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-      <!--<span class="sr-only">Previous</span>-->
-    <!--</a>-->
-    <!--<a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">-->
-      <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-      <!--<span class="sr-only">Next</span>-->
-    <!--</a>-->
-  <!--</div>-->
-
-  <div class="jumbotron jumbotron-fluid" style="background-color: rgba(26, 166, 198, 0.15); padding: 1rem 1rem; margin-top: 30px;">
-
-    <div class="container">
-      <br>
-      <blockquote class="blockquote text-center">
-        <p class="mb-0">Дауға  салса алмастай қиған, сезімге салса қырандай қалқыған, ойға салса қорғасындай балқыған, өмірдің кез-келген орайында әрі қару, әрі қалқан болған, әрі байырғы, әрі мәңгі жас, отты да ойнақы - Ана  тіліміз.</p>
-      </blockquote>
-      <br>
-      <hr>
-      <br>
-      <blockquote class="blockquote text-center">
-        <p class="mb-0">Перевод казахского языка на латиницу - это шаг к интеграции в глобальную систему науки и образования, обеспечения нашего духовного единства.</p>
-      </blockquote>
-      <br>
-      <hr>
-
-      <p class="text-muted text-center">
-        Нұрсұлтан Назарбаев
-      </p>
-    </div>
-  </div>
-
-  <div class="col">
-    <div class="card card-inverse" style="width: 100%; background-color: #333; border-color: #333; color: white; padding: 2rem 1rem;">
-      <div class="card-block text-center">
-        <h2 class="card-title">О нас</h2>
-        <p class="card-text" style="margin-top: 1rem;">
-          Сотрудничаем с веб-сайтами, издательствами, государственными/частными компаниями и учреждениями.
-        </p>
-        <p>
-          Если у вас есть текст на казахском языке написанный кириллической графикой и вы хотите грамотно, быстро и без ошибок перенести его на латинскую графику — пишите нам, мы сделаем всю сложную работу за вас.
-        </p>
-        <p class="card-text">
-          У нас есть широкий выбор инструментов, который позволит перенести текст на наш новый алфавит без головной боли.
-        </p>
-        <p class="card-text">
-          Если же у вас сложные или специальные запросы, например, сложная система управления контентом на веб-сайте мы доработаем программу под ваши нужды.
-        </p>
-        <br>
-        <a href="#" class="btn btn-primary">Написать нам</a>
-
-        <p class="text-muted" style="padding-top: 2rem;">
-          &copy; 2017 aelippe.kz
-        </p>
       </div>
     </div>
   </div>
+
+  <!--SECTION HELLO-->
+  <section class="welcome-home block">
+    <h1 translate>HOME.ABOUT_US</h1>
+    <p translate>HOME.ABOUT_US_P_1</p>
+    <p translate>HOME.ABOUT_US_P_2</p>
+    <p translate>HOME.ABOUT_US_P_3</p>
+    <p translate>HOME.ABOUT_US_P_4</p>
+
+    <a href="#" class="btn button large" translate>HOME.CONTACT_US</a>
+
+    <p><small>© 2017 aelippe.kz</small></p>
+  </section>
 
 </div>
 
