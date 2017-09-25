@@ -76,6 +76,36 @@ ul.nav ul li a:active {
   color: #fff;
 }
 
+.fb-share-button {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.fb-share-button:hover {
+  background-color: #2d4373;
+  color: #fff;
+}
+
+.twitter-share-button {
+  background-color: #55acee;
+  color: #fff;
+}
+
+.twitter-share-button:hover {
+  background-color: #2795e9;
+  color: #fff;
+}
+
+.vk-share-button {
+  background-color: #587ea3;
+  color: #fff;
+}
+
+.vk-share-button:hover {
+  background-color: #466482;
+  color: #fff;
+}
+
 .block {
   margin: 0 auto;
   max-width: 1280px;
