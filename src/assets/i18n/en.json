@@ -2,10 +2,10 @@
   "HOME": {
     "ABOUT": "About Project",
     "ABOUT_US": "About Us",
-    "ABOUT_US_P_1": "Сотрудничаем с веб-сайтами, издательствами, государственными/частными компаниями и учреждениями.",
-    "ABOUT_US_P_2": "Если у вас есть текст на казахском языке написанный кириллической графикой и вы хотите грамотно, быстро и без ошибок перенести его на латинскую графику — пишите нам, мы сделаем всю сложную работу за вас.",
-    "ABOUT_US_P_3": "У нас есть широкий выбор инструментов, который позволит перенести текст на наш новый алфавит без головной боли.",
-    "ABOUT_US_P_4": "Если же у вас сложные или специальные запросы, например, сложная система управления контентом на веб-сайте мы доработаем программу под ваши нужды.",
+    "ABOUT_US_P_1": "We cooperate with websites, publishers, public / private companies and institutions.",
+    "ABOUT_US_P_2": "If you have a text in Kazakh written by Cyrillic graphics and you want to transfer it to Latin script quickly and without errors - write to us, we will do all the hard work for you.",
+    "ABOUT_US_P_3": "We have a wide selection of tools that will allow you to transfer text to our new alphabet without a headache.",
+    "ABOUT_US_P_4": "If you have complex or special requests, for example, a complex content management system on your website, we will change the program for your needs.",
     "COPIED": "Copied",
     "CYRILLIC": "Cyrillic",
     "ENTER_TEXT": "Enter text...",
@@ -14,29 +14,37 @@
   },
   "ABOUT": {
     "NEW_ALPHABET": "New Alphabet",
-    "NEW_ALPHABET_SPAN_1": "2025-ші жылға дейін",
-    "NEW_ALPHABET_SPAN_2": "қазақ тілі латын",
-    "NEW_ALPHABET_SPAN_3": "әліппесіне көшеді.",
+    "NEW_ALPHABET_SPAN_1": "Until 2025 the",
+    "NEW_ALPHABET_SPAN_2": "Kazakh language will switch",
+    "NEW_ALPHABET_SPAN_3": "to the Latin alphabet.",
     "NOT_APPROVED": "Not approved",
     "READ_MORE": "Read more",
     "QUOTE_1": {
-      "TEXT": "Перевод казахского языка на латиницу - это шаг к интеграции в глобальную систему науки и образования, обеспечения нашего духовного единства.",
+      "TEXT": "The transition of the Kazakh language into Latin script is a step towards integration into the global system of science and education, ensuring our spiritual unity.",
       "AUTHOR": "Nursultan Nazarbayev"
     },
     "QUOTE_2": {
-      "TEXT": "Қазақ тілі еш уақытта өзімен көршілес халықтың тілдерінен сорлы болып, қатардан қалып өмір сүрмегендігі, өз сыбағасын ешкімге бермегендігі мыңдаған жыл тарихынан айқындалған.",
-      "AUTHOR": "Bauyrzan Momyshuly"
+      "TEXT": "Судьба любого народа тесно связана с судьбой его языка.",
+      "AUTHOR": "Bauyrzhan Momyshuly"
     },
     "QUOTE_3": {
+      "TEXT": "Всякий сумеет следовать по проторенной дорожке, проложенной отцами! Если ты в силах, ищи свои пути.",
+      "AUTHOR": "Mukhtar Auezov"
+    },
+    "QUOTE_4": {
+      "TEXT": "Қазақ тілі еш уақытта өзімен көршілес халықтың тілдерінен сорлы болып, қатардан қалып өмір сүрмегендігі, өз сыбағасын ешкімге бермегендігі мыңдаған жыл тарихынан айқындалған.",
+      "AUTHOR": "Bauyrzhan Momyshuly"
+    },
+    "QUOTE_5": {
       "TEXT": "Дауға салса алмастай қиған, сезімге салса қырандай қалқыған, ойға салса қорғасындай балқыған, өмірдің кез-келген орайында әрі қару, әрі қалқан болған, әрі байырғы, әрі мәңгі жас, отты да ойнақы - Ана тіліміз.",
       "AUTHOR": "Nursultan Nazarbayev"
     },
-    "QUOTE_4": {
-      "TEXT": "Тіл тазалығы үшін күрес -- ешқашан толастамайтын мәңгілік күрес.",
-      "AUTHOR": "Bauyrzan Momyshuly"
+    "QUOTE_6": {
+      "TEXT": "Тіл тазалығы үшін күрес – ешқашан толастамайтын мәңгілік күрес.",
+      "AUTHOR": "Bauyrzhan Momyshuly"
     },
     "SUGGESTED_ALPHABET": "One of the suggested alphabets",
-    "SUGGESTED_ALPHABET_P": "One of the suggested alphabets",
+    "SUGGESTED_ALPHABET_P": "How to translate letters of the former alphabet to a new graphics",
     "ANTHEM_WITH_NEW_LETTERS": "Anthem with new letters"
   }
 }

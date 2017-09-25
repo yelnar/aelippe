@@ -93,7 +93,7 @@ ul.nav ul li a:active {
 }
 
 .quotes article {
-  width: 320px;
+  width: 420px;
   max-width: 75vw;
   /*margin: 0 48px;*/
   flex-shrink: 0;
