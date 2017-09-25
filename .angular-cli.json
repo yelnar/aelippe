@@ -30,7 +30,8 @@
         "../node_modules/popper.js/dist/umd/popper.js",
         "../node_modules/tether/dist/js/tether.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "assets/scripts/rrssb.js"
+        "assets/scripts/rrssb.js",
+        "assets/scripts/share-text.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
