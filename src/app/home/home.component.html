@@ -33,7 +33,7 @@
           </div>
 
           <textarea name="input" maxlength="5000"
-                    wrap="soft" placeholder="Мәтін енгізіңіз..."
+                    wrap="soft" placeholder="{{ 'HOME.ENTER_TEXT' | translate }}"
                     #inputBox
                     [(ngModel)] = "inputModel" (ngModelChange)="onTextChanged(inputBox.value)"
                     [ngClass] = "{'smFont': inputBox.value.length > 150}"
