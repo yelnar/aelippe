@@ -238,6 +238,18 @@ blockquote {
   font-weight: 600;
 }
 
+.button.blue {
+  background-color: #157FF3 !important;
+  color: #fff !important;
+  padding: 16px !important;
+}
+
+.button.blue:hover, .button.blue:focus {
+  background-color: #2E2F30 !important;
+  box-shadow: none;
+  color: #fff;
+}
+
 
 /*HERO*/
 .hero {
