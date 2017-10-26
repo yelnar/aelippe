@@ -71,7 +71,7 @@ ul.nav ul li a:active {
   color: #fff;
 }
 
-.button:hover {
+.button:focus, .button:hover {
   background-color: #157FF3;
   color: #fff;
 }
@@ -81,7 +81,7 @@ ul.nav ul li a:active {
   color: #fff;
 }
 
-.fb-share-button:hover {
+.fb-share-button:focus, .fb-share-button:hover {
   background-color: #2d4373;
   color: #fff;
 }
@@ -91,7 +91,7 @@ ul.nav ul li a:active {
   color: #fff;
 }
 
-.twitter-share-button:hover {
+.twitter-share-button:focus, .twitter-share-button:hover {
   background-color: #2795e9;
   color: #fff;
 }
@@ -101,7 +101,7 @@ ul.nav ul li a:active {
   color: #fff;
 }
 
-.vk-share-button:hover {
+.vk-share-button:focus, .vk-share-button:hover {
   background-color: #466482;
   color: #fff;
 }
@@ -236,6 +236,18 @@ blockquote {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
+}
+
+.button.blue {
+  background-color: #157FF3 !important;
+  color: #fff !important;
+  padding: 16px !important;
+}
+
+.button.blue:hover, .button.blue:focus {
+  background-color: #2E2F30 !important;
+  box-shadow: none;
+  color: #fff;
 }
 
 
