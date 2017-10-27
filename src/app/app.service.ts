@@ -15,23 +15,43 @@ export class AppService {
   private getAlphabet(): Map<string, string> {
     const cyrillic = {
       base: 'АаБбДдЕеФфГгХхІіЖжКкЛлМмНнОоПпҚқРрСсТтҰұВвЫыЗз',
-      special: 'ӘәҒғИиЙйӨөШшЧчҮүУу',
+      special: 'ӘәҒғИиЙйӨөШшЧчҮүУуЩщ',
       lower: ['h', 'ң'],
-      other: ['Ё', 'ё', 'Ц', 'ц', 'Щ', 'щ', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', 'Ь', 'ь', 'Ъ', 'ъ']
+      other: ['Ё', 'ё', 'Ц', 'ц', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', 'Ь', 'ь', 'Ъ', 'ъ']
     };
 
     const latin = {
       base: 'AaBbDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvYyZz',
-      special: 'ÁáǴǵÍíÍíÓóŚśĆćÚúÝý',
-      lower: ['h', 'ń'],
-      other: ['Io', 'io', 'Ts', 'ts', 'Ś', 'ś', 'E', 'e', 'Iý', 'iw', 'Ia', 'ia', '', '', '', '']
+      special: 'AaGgIiIiOoSsCcUuYySsn',
+      lower: ['h', 'n\''],
+      other: ['Io', 'io', 'Ts', 'ts', 'E', 'e', 'Iu\'', 'iw', 'Ia', 'ia', '', '', '', '']
     };
+
+    // const cyrillic = {
+    //   base: 'АаБбДдЕеФфГгХхІіЖжКкЛлМмНнОоПпҚқРрСсТтҰұВвЫыЗз',
+    //   special: 'ӘәҒғИиЙйӨөШшЧчҮүУу',
+    //   lower: ['h', 'ң'],
+    //   other: ['Ё', 'ё', 'Ц', 'ц', 'Щ', 'щ', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', 'Ь', 'ь', 'Ъ', 'ъ']
+    // };
+
+    // const latin = {
+    //   base: 'AaBbDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvYyZz',
+    //   special: 'ÁáǴǵÍíÍíÓóŚśĆćÚúÝý',
+    //   lower: ['h', 'ń'],
+    //   other: ['Io', 'io', 'Ts', 'ts', 'Ś', 'ś', 'E', 'e', 'Iý', 'iw', 'Ia', 'ia', '', '', '', '']
+    // };
 
     const map = new Map();
 
     Object.keys(cyrillic).forEach((key) => {
+      let ending = '';
+
+      if (key === 'special') {
+        ending = '\'';
+      }
+
       for (let i = 0; i < cyrillic[key].length; i++) {
-        map.set(cyrillic[key][i], latin[key][i]);
+        map.set(cyrillic[key][i], latin[key][i] + ending);
       }
     });
 
