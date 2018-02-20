@@ -44,14 +44,8 @@ export class AppService {
     const map = new Map();
 
     Object.keys(cyrillic).forEach((key) => {
-      let ending = '';
-
-      if (key === 'special') {
-        ending = '\'';
-      }
-
       for (let i = 0; i < cyrillic[key].length; i++) {
-        map.set(cyrillic[key][i], latin[key][i] + ending);
+        map.set(cyrillic[key][i], latin[key][i]);
       }
     });
 
