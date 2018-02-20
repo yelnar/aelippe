@@ -14,17 +14,17 @@ export class AppService {
 
   private getAlphabet(): Map<string, string> {
     const cyrillic = {
-      base: 'АаБбДдЕеФфГгХхІіЖжКкЛлМмНнОоПпҚқРрСсТтҰұВвЫыЗз',
-      special: 'ӘәҒғИиЙйӨөШшЧчҮүУуЩщ',
+      base: 'АаБбДдЕеФфГгХхІіИиЙйЖжКкЛлМмНнОоПпҚқРрСсТтҰұВвЫыЗз',
+      special: 'ӘәҒғӨөҮүУу',
       lower: ['h', 'ң'],
-      other: ['Ё', 'ё', 'Ц', 'ц', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', 'Ь', 'ь', 'Ъ', 'ъ']
+      other: ['Ё', 'ё', 'Ц', 'ц', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', 'Ш', 'ш', 'Щ', 'щ', 'Ч', 'ч', 'Ь', 'ь', 'Ъ', 'ъ']
     };
 
     const latin = {
-      base: 'AaBbDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvYyZz',
-      special: 'AaGgIiIiOoSsCcUuYySsn',
-      lower: ['h', 'n\''],
-      other: ['Io', 'io', 'Ts', 'ts', 'E', 'e', 'Iu\'', 'iw', 'Ia', 'ia', '', '', '', '']
+      base: 'AaBbDdEeFfGgHhIiIıIıJjKkLlMmNnOoPpQqRrSsTtUuVvYyZz',
+      special: 'ÁáǴǵÓóÚúÝý',
+      lower: ['h', 'ń'],
+      other: ['Io', 'ıo', 'Ts', 'ts', 'E', 'e', 'Iý', 'ıý', 'Ia', 'ıa', 'Sh', 'sh', 'Sh', 'sh', 'Ch', 'ch', '', '', '', '']
     };
 
     // const cyrillic = {
@@ -64,7 +64,7 @@ export class AppService {
     }
 
     let result = '';
-    for (let l of text) {
+    for (const l of text) {
       if (this.alphabet.has(l)) {
         result += this.alphabet.get(l);
       } else {
